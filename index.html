@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousif Alsabah - Software Engineer & Robotics/AI Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">YA</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <!-- Availability Badge -->
+            <div class="availability-badge">
+                <span class="dot"></span>
+                Open to new opportunities
+            </div>
+            <div class="hero-greeting">👋 Hello, I'm</div>
+            <h1 class="hero-title">Yousif Alsabah</h1>
+            <p class="hero-subtitle">Software Engineer & Robotics/AI Specialist</p>
+            <p class="hero-description">
+                Master's candidate in Robotics & Autonomous Systems at ASU with a passion for building
+                intelligent systems, enterprise applications, and cutting-edge automation solutions.
+                Currently engineering the future at Intel.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <i class="fas fa-code"></i> View Work
+                </a>
+                <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-secondary">
+                    <i class="fas fa-download"></i> Resume
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yalsabah" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/yalsabah" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:yalsabah@asu.edu" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:602-885-7908" aria-label="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Stats -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Building the future, one line of code at a time</p>
+
+        <div class="stats-grid">
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-number">4.00</span>
+                <span class="stat-label">Master's GPA</span>
+            </div>
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-number">3.80</span>
+                <span class="stat-label">Bachelor's GPA</span>
+            </div>
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Years at Intel</span>
+            </div>
+            <div class="stat-card animate-on-scroll">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Technologies</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">Professional journey and achievements</p>
+
+        <div class="experience-grid">
+            <!-- Software Developer Intern -->
+            <div class="experience-card animate-on-scroll">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Developer Intern</div>
+                        <div class="experience-company">Intel Corporation</div>
+                    </div>
+                </div>
+                <div class="experience-meta">
+                    <span><i class="fas fa-calendar"></i> Aug. 2023 – Present</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Chandler, AZ</span>
+                </div>
+                <ul class="experience-description">
+                    <li>Designed and developed two large-scale React-based enterprise UI applications supporting factory
+                        workflows, data visualization, and role-specific user interactions</li>
+                    <li>Built interactive charts, graphs, and data tables using AG Grid and Recharts to visualize
+                        real-time application data and operational metrics, improving data visibility and reducing
+                        manual data lookup time by 30%</li>
+                    <li>Implemented Redux for centralized state management across 10+ UI views, reducing state-related
+                        bugs and improving feature development velocity by 25%</li>
+                    <li>Developed role-based UI authorization supporting 2+ user roles and managing access for 1,000+
+                        internal users across multiple factory sites, ensuring secure, permission-driven feature
+                        availability</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Redux</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">AG Grid</span>
+                    <span class="tech-tag">Recharts</span>
+                </div>
+            </div>
+
+            <!-- Web Development Intern -->
+            <div class="experience-card animate-on-scroll">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Web Development Intern</div>
+                        <div class="experience-company">Intel Corporation</div>
+                    </div>
+                </div>
+                <div class="experience-meta">
+                    <span><i class="fas fa-calendar"></i> Sept. 2022 – Aug. 2023</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Chandler, AZ</span>
+                </div>
+                <ul class="experience-description">
+                    <li>Designed and implemented two internal web platforms used to monitor and log operations for
+                        5,000+ factory personnel, improving operational efficiency by 15%</li>
+                    <li>Automated over 10,000 manual email workflows using Microsoft Power Automate, improving response
+                        times by 35% and reducing processing delays by 20%</li>
+                    <li>Built Python automation tools including a lossless TIFF-to-PNG conversion pipeline, reducing
+                        file sizes by 50% while preserving checksum-verified integrity</li>
+                    <li>Implemented a block-hash image comparison algorithm achieving 83.6% similarity and improving
+                        defect detection throughput by 40%</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Power Automate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Innovative solutions and technical implementations</p>
+
+        <div class="projects-grid">
+            <!-- Project 1: Eshu/Ender -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Eshu/Ender Platform</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> Aug. 2024 – May 2025</p>
+                    <p class="project-description">
+                        Common Language Platform for Post-Exploitation Frameworks - A Flask-based unified control
+                        interface
+                        integrating Metasploit and Sliver frameworks.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Led development of unified post-exploitation platform</li>
+                        <li>Designed REST APIs for 10+ interactive commands</li>
+                        <li>Containerized services using Docker</li>
+                        <li>Reduced workflow overhead by 40%</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">Metasploit</span>
+                        <span class="tech-tag">Linux</span>
+                    </div>
+                    <button class="view-more-btn" data-project="eshu">View More →</button>
+                </div>
+            </div>
+
+            <!-- Project 2: Robotics & Autonomous Systems -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Robotics & Autonomous Systems</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> Aug. 2025 – Dec. 2025</p>
+                    <p class="project-description">
+                        Autonomous robotic systems integrating computer vision, AI-driven planning, and robot
+                        manipulation
+                        using Dobot Magician Lite.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Built automated maze-solving system with OpenCV</li>
+                        <li>Implemented Agentic AI using Claude API</li>
+                        <li>Created vision-based Tic-Tac-Toe with Minimax</li>
+                        <li>Developed pick-and-place pipeline</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Robotics</span>
+                    </div>
+                    <button class="view-more-btn" data-project="robotics">View More →</button>
+                </div>
+            </div>
+
+            <!-- Project 3: Enterprise UI Applications -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Enterprise UI Applications</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> Intel - Current</p>
+                    <p class="project-description">
+                        Large-scale React-based enterprise applications with sophisticated data visualization,
+                        state management, and role-based access control.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Supports 1,000+ internal users</li>
+                        <li>10+ interconnected UI views</li>
+                        <li>Real-time data visualization</li>
+                        <li>30% improvement in data accessibility</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Redux</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">AG Grid</span>
+                        <span class="tech-tag">Recharts</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Automation Tools -->
+            <div class="project-card animate-on-scroll">
+                <div class="project-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Factory Automation Tools</h3>
+                    <p class="project-date"><i class="fas fa-calendar"></i> Intel - 2022-2023</p>
+                    <p class="project-description">
+                        Suite of automation tools for factory operations including image processing,
+                        workflow automation, and defect detection systems.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Automated 10,000+ email workflows</li>
+                        <li>50% file size reduction with lossless conversion</li>
+                        <li>40% improvement in defect detection</li>
+                        <li>Serving 5,000+ factory personnel</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Power Automate</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">C#</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side panel for project details -->
+        <div id="projectPanel" class="project-panel" aria-hidden="true">
+            <button id="closePanel" class="close-panel" aria-label="Close panel">&times;</button>
+            <h3 id="panelTitle" class="panel-title"></h3>
+            <p id="panelDescription" class="panel-description"></p>
+            <div id="panelExtra" class="panel-extra"></div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">Technologies and tools I work with</p>
+
+        <div class="skills-container">
+            <div class="skill-category animate-on-scroll">
+                <h3 class="skill-category-title">
+                    <i class="fas fa-code"></i> Programming Languages
+                </h3>
+                <div class="skill-items">
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">C#</span>
+                    <span class="skill-item">C/C++</span>
+                    <span class="skill-item">TypeScript</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">HTML/CSS</span>
+                    <span class="skill-item">MySQL</span>
+                </div>
+            </div>
+
+            <div class="skill-category animate-on-scroll">
+                <h3 class="skill-category-title">
+                    <i class="fas fa-layer-group"></i> Frameworks & Libraries
+                </h3>
+                <div class="skill-items">
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">Redux</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Flask</span>
+                    <span class="skill-item">.NET</span>
+                    <span class="skill-item">Tailwind CSS</span>
+                    <span class="skill-item">AG Grid</span>
+                    <span class="skill-item">Recharts</span>
+                </div>
+            </div>
+
+            <div class="skill-category animate-on-scroll">
+                <h3 class="skill-category-title">
+                    <i class="fas fa-robot"></i> AI/ML & Robotics
+                </h3>
+                <div class="skill-items">
+                    <span class="skill-item">OpenCV</span>
+                    <span class="skill-item">Computer Vision</span>
+                    <span class="skill-item">OpenPCDet</span>
+                    <span class="skill-item">CUDA</span>
+                    <span class="skill-item">ROS 2</span>
+                    <span class="skill-item">NumPy</span>
+                    <span class="skill-item">Lidar</span>
+                    <span class="skill-item">AI Planning</span>
+                </div>
+            </div>
+
+            <div class="skill-category animate-on-scroll">
+                <h3 class="skill-category-title">
+                    <i class="fas fa-tools"></i> Tools & DevOps
+                </h3>
+                <div class="skill-items">
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Jira</span>
+                    <span class="skill-item">Power Automate</span>
+                    <span class="skill-item">Linux</span>
+                    <span class="skill-item">Shell Scripting</span>
+                    <span class="skill-item">REST APIs</span>
+                    <span class="skill-item">Metasploit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">Academic achievements and qualifications</p>
+
+        <div class="education-grid">
+            <!-- Master's Degree -->
+            <div class="education-card animate-on-scroll">
+                <div class="education-degree">Master of Science</div>
+                <div class="education-school">Arizona State University</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Robotics and Autonomous Systems (Artificial Intelligence)
+                </p>
+                <div class="education-meta">
+                    <span class="education-gpa">GPA: 4.00</span>
+                    <span class="education-date"><i class="fas fa-calendar"></i> May 2025 – Present</span>
+                </div>
+                <p class="education-location"><i class="fas fa-map-marker-alt"></i> Tempe, AZ</p>
+            </div>
+
+            <!-- Bachelor's Degree -->
+            <div class="education-card animate-on-scroll">
+                <div class="education-degree">Bachelor of Science</div>
+                <div class="education-school">Arizona State University</div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Computer Science
+                </p>
+                <div class="education-meta">
+                    <span class="education-gpa">GPA: 3.80</span>
+                    <span class="education-date"><i class="fas fa-calendar"></i> August 2021 - May 2025</span>
+                </div>
+                <p class="education-location"><i class="fas fa-map-marker-alt"></i> Tempe, AZ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container animate-on-scroll">
+            <h2 class="contact-title">Let's Build Something Amazing</h2>
+            <p class="contact-description">
+                I'm always interested in hearing about new opportunities, collaborations, or just having a chat
+                about technology, AI, and robotics. Feel free to reach out!
+            </p>
+            <div class="hero-buttons" style="margin-bottom: 2rem;">
+                <a href="mailto:yalsabah@asu.edu" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+                <a href="https://linkedin.com/in/yalsabah" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:602-885-7908">602-885-7908</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:yalsabah@asu.edu">yalsabah@asu.edu</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/yalsabah" target="_blank">github.com/yalsabah</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/yalsabah" target="_blank">linkedin.com/in/yalsabah</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Yousif Alsabah. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Designed & Built with <i class="fas fa-heart" style="color: var(--accent-color);"></i> using HTML, CSS,
+                and JavaScript
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
