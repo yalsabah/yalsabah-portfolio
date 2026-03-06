@@ -323,16 +323,35 @@ function openProjectPanel(projectKey) {
 	if (projectsGridEl) projectsGridEl.classList.add("shifted");
 }
 
+let activeBtn = null;
+
+function closePanel() {
+	projectPanel.classList.remove("open");
+	projectPanel.setAttribute("aria-hidden", "true");
+	if (projectsGridEl) projectsGridEl.classList.remove("shifted");
+	if (activeBtn) {
+		activeBtn.textContent = "View More →";
+		activeBtn = null;
+	}
+}
+
 document.querySelectorAll(".view-more-btn").forEach((btn) => {
-	btn.addEventListener("click", () => openProjectPanel(btn.dataset.project));
+	btn.addEventListener("click", () => {
+		if (activeBtn === btn) {
+			closePanel();
+			return;
+		}
+		if (activeBtn) {
+			activeBtn.textContent = "View More →";
+		}
+		activeBtn = btn;
+		btn.textContent = "View Less ←";
+		openProjectPanel(btn.dataset.project);
+	});
 });
 
 if (closePanelBtn) {
-	closePanelBtn.addEventListener("click", () => {
-		projectPanel.classList.remove("open");
-		projectPanel.setAttribute("aria-hidden", "true");
-		if (projectsGridEl) projectsGridEl.classList.remove("shifted");
-	});
+	closePanelBtn.addEventListener("click", closePanel);
 }
 
 // ─── Console Easter Egg ───────────────────────────────────────────────────────
