@@ -1291,3 +1291,182 @@ html {
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--secondary-color);
 }
+
+/* ── Cursor Toggle Button ─────────────────────────────────────────────────── */
+.cursor-toggle.cursor-off {
+	opacity: 0.45;
+	position: relative;
+}
+/* Strikethrough diagonal line when off */
+.cursor-toggle.cursor-off::before {
+	content: "";
+	position: absolute;
+	width: 2px;
+	height: 26px;
+	background: var(--accent-color);
+	border-radius: 2px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(45deg);
+	pointer-events: none;
+}
+
+/* ── Custom Cursor ────────────────────────────────────────────────────────── */
+/* Only hide native cursor when custom cursor is explicitly active */
+html.custom-cursor-active,
+html.custom-cursor-active * {
+	cursor: none !important;
+}
+
+.cursor-dot {
+	position: fixed;
+	width: 8px;
+	height: 8px;
+	background: var(--primary-color);
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 99999;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 8px var(--primary-color);
+	opacity: 0;
+	transition:
+		opacity 0.2s ease,
+		width 0.2s ease,
+		height 0.2s ease;
+}
+
+.cursor-ring {
+	position: fixed;
+	width: 36px;
+	height: 36px;
+	border: 1.5px solid var(--primary-color);
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: 99998;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition:
+		opacity 0.25s ease,
+		width 0.25s ease,
+		height 0.25s ease,
+		border-color 0.25s ease;
+}
+
+/* Hover: ring expands and shifts color, dot shrinks */
+html.custom-cursor-active body.cursor-hover .cursor-dot {
+	width: 4px;
+	height: 4px;
+	opacity: 0.5;
+}
+html.custom-cursor-active body.cursor-hover .cursor-ring {
+	width: 52px;
+	height: 52px;
+	opacity: 1;
+	border-color: var(--secondary-color);
+}
+
+/* Click: ring contracts fast */
+html.custom-cursor-active body.cursor-click .cursor-ring {
+	width: 24px;
+	height: 24px;
+	opacity: 1;
+	transition:
+		width 0.08s ease,
+		height 0.08s ease;
+}
+
+/* Skip link */
+.skip-link {
+	position: absolute;
+	top: -100px;
+	left: 1rem;
+	background: var(--primary-color);
+	color: #0a0a0f;
+	padding: 0.6rem 1.2rem;
+	border-radius: 0 0 8px 8px;
+	font-weight: 700;
+	font-size: 0.9rem;
+	z-index: 10000;
+	text-decoration: none;
+	transition: top 0.2s ease;
+}
+.skip-link:focus {
+	top: 0;
+}
+
+/* Focus states */
+:focus-visible {
+	outline: 2px solid var(--primary-color);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* Button ripple */
+.btn {
+	position: relative;
+	overflow: hidden;
+}
+.btn::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(255, 255, 255, 0.15);
+	opacity: 0;
+	border-radius: inherit;
+	transition: opacity 0.2s ease;
+}
+.btn:active::after {
+	opacity: 1;
+}
+
+/* Close panel spin */
+.close-panel {
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	transition:
+		background 0.2s ease,
+		transform 0.2s ease;
+}
+.close-panel:hover {
+	background: rgba(255, 107, 107, 0.15);
+	color: var(--accent-color);
+	transform: rotate(90deg);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+	.cursor-dot,
+	.cursor-ring {
+		display: none !important;
+	}
+}
+
+/* Print */
+@media print {
+	nav,
+	.scroll-progress,
+	.bg-animation,
+	.back-to-top,
+	.project-panel,
+	.theme-toggle,
+	.cursor-toggle,
+	.cursor-dot,
+	.cursor-ring {
+		display: none !important;
+	}
+	body {
+		background: white;
+		color: black;
+	}
+}

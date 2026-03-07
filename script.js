@@ -354,6 +354,112 @@ if (closePanelBtn) {
 	closePanelBtn.addEventListener("click", closePanel);
 }
 
+// Close panel on Escape
+document.addEventListener("keydown", (e) => {
+	if (e.key === "Escape" && projectPanel.classList.contains("open")) {
+		closePanel();
+	}
+});
+
+// ─── Custom Cursor ────────────────────────────────────────────────────────────
+const cursorDot = document.querySelector(".cursor-dot");
+const cursorRing = document.querySelector(".cursor-ring");
+const cursorToggleBtn = document.getElementById("cursorToggle");
+
+// Persist cursor preference; default ON
+let cursorEnabled = localStorage.getItem("customCursor") !== "false";
+
+function applyCursorState() {
+	const isOn = cursorEnabled && window.matchMedia("(pointer: fine)").matches;
+
+	// Toggle a class on <html> — CSS handles cursor:none cleanly
+	document.documentElement.classList.toggle("custom-cursor-active", isOn);
+
+	if (cursorDot) cursorDot.style.opacity = isOn ? "1" : "0";
+	if (cursorRing) cursorRing.style.opacity = isOn ? "0.6" : "0";
+
+	if (cursorToggleBtn) {
+		cursorToggleBtn.classList.toggle("cursor-off", !cursorEnabled);
+		cursorToggleBtn.setAttribute(
+			"aria-label",
+			cursorEnabled ? "Disable custom cursor" : "Enable custom cursor",
+		);
+		cursorToggleBtn.setAttribute(
+			"title",
+			cursorEnabled ? "Disable custom cursor" : "Enable custom cursor",
+		);
+	}
+}
+
+if (cursorToggleBtn) {
+	cursorToggleBtn.addEventListener("click", () => {
+		cursorEnabled = !cursorEnabled;
+		localStorage.setItem("customCursor", cursorEnabled);
+		applyCursorState();
+	});
+}
+
+if (cursorDot && cursorRing && window.matchMedia("(pointer: fine)").matches) {
+	let mouseX = 0,
+		mouseY = 0,
+		ringX = 0,
+		ringY = 0;
+
+	document.addEventListener(
+		"mousemove",
+		(e) => {
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+			cursorDot.style.left = mouseX + "px";
+			cursorDot.style.top = mouseY + "px";
+		},
+		{ passive: true },
+	);
+
+	// Ring follows with smooth lag
+	(function animateRing() {
+		ringX += (mouseX - ringX) * 0.15;
+		ringY += (mouseY - ringY) * 0.15;
+		cursorRing.style.left = ringX + "px";
+		cursorRing.style.top = ringY + "px";
+		requestAnimationFrame(animateRing);
+	})();
+
+	// Hover expand on interactive elements
+	const interactives =
+		"a, button, .btn, .view-more-btn, .skill-item, .project-card, .link-card, .media-card";
+	document.addEventListener("mouseover", (e) => {
+		if (e.target.closest(interactives))
+			document.body.classList.add("cursor-hover");
+	});
+	document.addEventListener("mouseout", (e) => {
+		if (e.target.closest(interactives))
+			document.body.classList.remove("cursor-hover");
+	});
+
+	// Click pulse
+	document.addEventListener("mousedown", () =>
+		document.body.classList.add("cursor-click"),
+	);
+	document.addEventListener("mouseup", () =>
+		document.body.classList.remove("cursor-click"),
+	);
+
+	// Hide when mouse leaves window
+	document.addEventListener("mouseleave", () => {
+		if (cursorDot) cursorDot.style.opacity = "0";
+		if (cursorRing) cursorRing.style.opacity = "0";
+	});
+	document.addEventListener("mouseenter", () => {
+		if (!cursorEnabled) return;
+		if (cursorDot) cursorDot.style.opacity = "1";
+		if (cursorRing) cursorRing.style.opacity = "0.6";
+	});
+}
+
+// Apply saved preference on load
+applyCursorState();
+
 // ─── Console Easter Egg ───────────────────────────────────────────────────────
 console.log(
 	"%c👋 Welcome to my portfolio!",
