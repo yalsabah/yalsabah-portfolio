@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <!-- Custom cursor elements -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
 
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress"></div>
@@ -52,8 +55,12 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+                <i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
+            <button class="theme-toggle cursor-toggle" id="cursorToggle" aria-label="Disable custom cursor"
+                title="Toggle custom cursor">
+                <i class="fas fa-mouse-pointer" aria-hidden="true"></i>
             </button>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
