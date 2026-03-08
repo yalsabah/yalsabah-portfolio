@@ -18,5 +18,5 @@ jobs:
           test -f styles.css
           test -f script.js
 
-      - name: Show changed files
-        run: git diff --name-only origin/main...HEAD
+      - name: List repository files
+        run: ls -la
